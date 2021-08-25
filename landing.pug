@@ -1,3 +1,5 @@
+
+-var titulos = ["Titulo Principal", "Subtitulo 1", "Subtitulo 2", "Subtitulo 3"]
 doctype html
 html 
   head 
@@ -10,7 +12,7 @@ html
     section.intro 
         .intro__imagen: img(src="./images/imagen.png")
         .intro__contenido 
-          h2 Titulo Principal 
+          h2 #{titulos[0][0]}
           p
            | Lorem ipsum dolor sit amet consecteturadipisicing elit. 
            | Aperiam facere explicabo architecto, voluptatem nihil vero iusto esse maxime molestiae ullam,
