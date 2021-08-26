@@ -1,35 +1,16 @@
-
--var titulos = ["Titulo Principal", "Subtitulo 1", "Subtitulo 2", "Subtitulo 3"]
--var usuario = "David"
-mixin caja(imagen, titulo, contenido)
-      .caja
-        .caja__imagen: img(src="./images/"+imagen)
-        .caja__contenido
-          h3=titulo
-          p=contenido
-doctype html
-html 
-  head 
-    meta(charset="UTF-8")
-    link(rel="stylesheet", href="./css/ejercicio-pug.css")
-  body 
-    header 
-      h1 PlatziGames 
-      if usuario 
-        a Hola #{usuario}
-      else  
-        a.boton Registro
-    section.intro 
-        .intro__imagen: img(src="./images/imagen.png")
-        .intro__contenido 
-          h2 #{titulos[0][0]}
-          p
-           | Lorem ipsum dolor sit amet consecteturadipisicing elit. 
-           | Aperiam facere explicabo architecto, voluptatem nihil vero iusto esse maxime molestiae ullam,
-           | optio praesentium quam aspernatur neque nesciunt cumque veritatis. Exercitationem, temporibus.
-           span Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis commodi dolores dolorum quae vel odio quo? Quae suscipit minus voluptatibus est aliquid laboriosam, quos pariatur, asperiores sequi consequuntur facilis mollitia.
-          a.boton Leer Más
-    main.contenido
-      +caja("imagen.png", titulos[1], "Lorem Ipsum dolor sit amet")
-      +caja("imagen.png", titulos[2], "Lorem Ipsum dolor sit amet")
-      +caja("imagen.png", titulos[3], "Lorem Ipsum dolor sit amet")
+extend componentes/plantilla.pug
+block contenidos
+  section.intro 
+    .intro__imagen: img(src="./images/imagen.png")
+    .intro__contenido 
+      h2 #{titulos[0][0]}
+      p
+        | Lorem ipsum dolor sit amet consecteturadipisicing elit. 
+        | Aperiam facere explicabo architecto, voluptatem nihil vero iusto esse maxime molestiae ullam,
+        | optio praesentium quam aspernatur neque nesciunt cumque veritatis. Exercitationem, temporibus.
+        span Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis commodi dolores dolorum quae vel odio quo? Quae suscipit minus voluptatibus est aliquid laboriosam, quos pariatur, asperiores sequi consequuntur facilis mollitia.
+      a.boton Leer Más
+  main.contenido
+    +caja("imagen.png", titulos[1], "Lorem Ipsum dolor sit amet")
+    +caja("imagen.png", titulos[2], "Lorem Ipsum dolor sit amet")
+    +caja("imagen.png", titulos[3], "Lorem Ipsum dolor sit amet")
