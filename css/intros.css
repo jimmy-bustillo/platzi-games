@@ -13,7 +13,7 @@
   width: 100%;
   height: 624px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .intro__contenido {
   width: 50%;
