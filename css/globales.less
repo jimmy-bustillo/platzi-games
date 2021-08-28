@@ -7,6 +7,8 @@
 @Fuente2: "Oswald", sans-serif;
 @fuente-base: 18px;
 
+@dark-mode: false;
+
 // Mixin
 .sombra-caja {
   box-shadow: 0px 5px 15px 0px fade(@color-primario, 30%);
@@ -16,6 +18,35 @@
   text-transform: uppercase;
   font-weight: 700;
 }
+
+.fuente(@font-size) {
+  font-size: @font-size;
+  line-height: @font-size + 10%;
+}
+
+.Dark () when (@dark-mode = true) {
+  background-color: @color-primario;
+  color: @color-claro;
+  .intro {
+    background-color: @color-secundario;
+  }
+  .articulo--principal {
+    h2 {
+      color: @color-secundario;
+    }
+  }
+  .caja__contenido {
+    background-color: @color-secundario;
+    color: fade(@color-claro, 70%);
+    span {
+      color: fade(@color-claro, 70%);
+    }
+    a {
+      color: fade(@color-claro, 70%);
+    }
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -24,7 +55,8 @@ body {
   margin: 0;
   font-family: @Fuente1;
   color: @color-primario;
-  line-height: @fuente-base + 10%;
+  .fuente(@fuente-base);
+  .Dark;
 }
 
 h1,
@@ -32,5 +64,4 @@ h2,
 h3 {
   .Oswald;
   margin: 0;
-  line-height: @fuente-base + 60%;
 }
